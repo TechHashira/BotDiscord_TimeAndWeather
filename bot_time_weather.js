@@ -16,7 +16,7 @@ client.on('ready', () => {
 
 client.on("message", async (message) => {
 
-    if (message.content.startsWith("!time") && message.channel.type === "text") {
+    if (message.content.startsWith("!time")) {
         let targetAux = message.content.split(" ");
 
         let target = await targetPreparation(targetAux);
