@@ -5,8 +5,10 @@ const {
 const client = new Client();
 const axios = require("axios");
 
-const api_key_coords = "7dbcdc69353895ca4a62c99225087539"; // openweather 
-const api_key_time = "65d89176c0dc4368828a81cad9de1a1b"; // IP Geo lcation
+process.env.API_1 = process.env.API_1 || "Your api_1 openweather"; // openweather 
+process.env.API_2 = process.env.API_2 || "Your api_2 openweather"; // IP Geo location
+
+
 
 
 client.on('ready', () => {
@@ -21,7 +23,7 @@ client.on("message", async (message) => {
 
         let target = await targetPreparation(targetAux);
 
-        request(target, [api_key_coords, api_key_time]).then(resp => {
+        request(target, [process.env.API_1, process.env.API_2]).then(resp => {
             const embed = new MessageEmbed();
             embed.setTitle("Time and Weather")
                 .setDescription(`${resp.time_12} in ${resp.timezone}, with ${resp.temp} °C`)
@@ -79,4 +81,5 @@ const targetPreparation = async (target) => {
 }
 
 
-client.login("NzM0NDg0MTkzNTY4MDk2MzQ3.XxUrLA.giaCQ3YOyMTI71n7c8nAse_cqAw");
+process.env.secret_token = process.env.secret_token || "your_token";
+client.login(process.env.secret_token);
