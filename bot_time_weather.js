@@ -79,4 +79,4 @@ const targetPreparation = async (target) => {
 }
 
 
-client.login("NzM0NDg0MTkzNTY4MDk2MzQ3.XxSpvg.XE-xlBrLo4WXLKGuyI1dHhHm8PQ");
+client.login("NzM0NDg0MTkzNTY4MDk2MzQ3.XxUrLA.giaCQ3YOyMTI71n7c8nAse_cqAw");
